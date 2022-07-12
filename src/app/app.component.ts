@@ -110,4 +110,9 @@ export class AppComponent {
       return 'orange';
     }
   }
+  public getClassForPlaces(places: number) {
+    if (places === 0) return 'sold-out';
+    if (places < 8) return 'few-places';
+    return '';
+  }
 }

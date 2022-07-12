@@ -7,6 +7,10 @@
     <ul>
       <li *ngFor="let agency of agencies ">
         <span [ngClass]=" agency.status | lowercase ">{{ agency.name }} </span>
+        <!-- <span *ngIf="agency.range==='Interplanetary'"> 🪐 </span>
+        <span *ngIf="agency.range==='Orbital'"> 🌍 </span> -->
+        <span *ngIf="agency.range==='Interplanetary' ; else orbitalIcon  "> 🪐 </span>
+        <ng-template #orbitalIcon><span> 🌍 </span></ng-template>
       </li>
     </ul>
   </article>
@@ -15,6 +19,13 @@
     <ul>
       <li *ngFor="let trip of trips ">
         <span [ngClass]="getClassForStatus(trip.status)"> {{ trip.destination }} </span>
+        <span> 💸 {{ trip.flightPrice | currency }}</span>
+        <span> ⤴️ {{ trip.startDate | date:'yyyy-MMM-dd' }}</span>
+        <span> ⤵️ {{ trip.endDate | date:'yyyy-MMM-dd' }}</span>
+        <span [ngClass]="getClassForPlaces(trip.places)"> 🧑🏼‍🚀 {{ trip.places }}</span>
+        <ng-container *ngIf="trip.kind==='WithStay' then withStay; else tripOnly"></ng-container>
+        <ng-template #withStay> 🧳 </ng-template>
+        <ng-template #tripOnly> 🛰️ </ng-template>
       </li>
     </ul>
   </article>

@@ -25,4 +25,10 @@ ng g c header
 # Generate new component Footer
 ng g c footer
 
+# Generate new module Home
+ng g m home
+
+# Generate new component Footer
+ng g c home
+
 ```

@@ -28,7 +28,15 @@ ng g c footer
 # Generate new module Home
 ng g m home
 
-# Generate new component Footer
+# Generate new component home
+# (needs to be exported in the module Home)
 ng g c home
+ng g c agencies
+ng g c trips
 
+
+# Generate a Shared module
+ng g m shared
+# Generate an exported component
+ng g c shared/reloading --export
 ```

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public title = 'Astro Bookings';
+  public title: string = 'Astro Bookings';
   public subtitle = 'Welcome on board';
   public agencies = [
     {
@@ -90,8 +90,24 @@ export class AppComponent {
       premiumFoodPrice: 1000,
     },
   ];
+  public isReloading = false;
+  public author = 'Alberto Basalo';
+  public authorUrl = 'https://twitter.com/albertobasalo';
 
   public getTripsCounter() {
     return this.trips.length;
+  }
+
+  public reload(): void {
+    this.isReloading = true;
+    console.log('♻️ Reloading...');
+  }
+
+  public getClassForStatus(status: string): string {
+    if (status === 'Confirmed') {
+      return 'green';
+    } else {
+      return 'orange';
+    }
   }
 }

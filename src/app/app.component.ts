@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  public title: string = 'Astro Bookings';
-  public subtitle = 'Welcome on board';
   public agencies = [
     {
       id: 'space-y',
@@ -91,8 +89,6 @@ export class AppComponent {
     },
   ];
   public isReloading = false;
-  public author = 'Alberto Basalo';
-  public authorUrl = 'https://twitter.com/albertobasalo';
 
   public getTripsCounter() {
     return this.trips.length;

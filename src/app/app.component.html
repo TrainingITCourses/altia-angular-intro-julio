@@ -1,6 +1,4 @@
-<header>
-  <h1>{{ title | uppercase }}</h1>
-</header>
+<app-header></app-header>
 <main>
   <article>
     <h3>We work with {{ agencies.length }} agencies</h3>
@@ -33,8 +31,4 @@
   <aside *ngIf="isReloading"> Reloading... please wait. ⌛ </aside>
   <router-outlet></router-outlet>
 </main>
-<footer>
-  <h6>{{ title }}</h6>
-  <p><i>{{ subtitle | lowercase }}</i></p>
-  <a [href]="authorUrl"> {{ author }} </a>
-</footer>
+<app-footer></app-footer>

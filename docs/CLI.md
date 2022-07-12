@@ -13,3 +13,16 @@ ng new altia-angular-intro-julio --routing=true --style=css
 npm install @picocss/pico
 
 ```
+
+## 1. Templates
+
+## 2. Modules
+
+```bash
+# Generate new component Header
+ng g c header
+
+# Generate new component Footer
+ng g c footer
+
+```

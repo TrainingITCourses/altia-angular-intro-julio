@@ -39,4 +39,8 @@ ng g c trips
 ng g m shared
 # Generate an exported component
 ng g c shared/reloading --export
+
+# Generate a Shared module
+ng g m core
+## Move header and footer to core module
 ```

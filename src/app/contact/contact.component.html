@@ -5,9 +5,9 @@
            name="name"
            type="text"
            placeholder="Your name"
-           formControlName="name">
-    <pre> STATUS: {{ formGroup.controls['name'].status | json }} </pre>
-    <pre> PRISTINE: {{ formGroup.controls['name'].pristine | json }} </pre>
+           formControlName="name"
+           [attr.aria-invalid]="isInvalid('name')">
+    <small *ngIf="isTouched('name') && isInvalid('name')"> This field is required </small>
   </div>
   <div>
     <label for="email">Your email</label>
@@ -15,22 +15,20 @@
            name="email"
            type="email"
            placeholder="Your email"
-           formControlName="email">
-    <pre> STATUS: {{ formGroup.controls['email'].status | json }} </pre>
-    <pre> PRISTINE: {{ formGroup.controls['email'].pristine | json }} </pre>
+           formControlName="email"
+           [attr.aria-invalid]="isInvalid('email')">
+    <small *ngIf="isTouched('email') && isInvalid('email')"> This field is required and valid email
+    </small>
   </div>
   <div>
     <label for="message">Your message</label>
     <textarea id="message"
               name="message"
               placeholder="Your message"
-              formControlName="message"></textarea>
-    <pre> STATUS: {{ formGroup.controls['message'].status | json }} </pre>
-    <pre> PRISTINE: {{ formGroup.controls['message'].pristine | json }} </pre>
+              formControlName="message"
+              [attr.aria-invalid]="isInvalid('message')"></textarea>
+    <small *ngIf="isTouched('message') && isInvalid('message')"> This field has to be short </small>
   </div>
+  <button (click)="onSendClick()"
+          [disabled]="formGroup.invalid"> Send </button>
 </form>
-<pre> {{ formGroup.value | json }} </pre>
-<pre> {{ formGroup.status | json }} </pre>
-<pre> PRISTINE: {{ formGroup.pristine | json }} </pre>
-<pre> TOUCHED: {{ formGroup.touched | json }} </pre>
-<pre> DIRTY: {{ formGroup.dirty | json }} </pre>

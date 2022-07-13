@@ -28,5 +28,29 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  public isInvalid(formControlName: string): boolean {
+    const control = this.getControl(formControlName);
+    if (control) {
+      return control.invalid;
+    }
+    return true;
+  }
+
+  public isTouched(formControlName: string): boolean {
+    const control = this.getControl(formControlName);
+    if (control) {
+      return control.touched;
+    }
+    return true;
+  }
+
+  private getControl(formControlName: string) {
+    return this.formGroup.controls[formControlName];
+  }
+
+  public onSendClick() {
+    console.warn('Sending ', this.formGroup.value);
+  }
+
   ngOnInit(): void {}
 }

@@ -1,1 +1,36 @@
-<p>contact works!</p>
+<form [formGroup]="formGroup">
+  <div>
+    <label for="name">Your name</label>
+    <input id="name"
+           name="name"
+           type="text"
+           placeholder="Your name"
+           formControlName="name">
+    <pre> STATUS: {{ formGroup.controls['name'].status | json }} </pre>
+    <pre> PRISTINE: {{ formGroup.controls['name'].pristine | json }} </pre>
+  </div>
+  <div>
+    <label for="email">Your email</label>
+    <input id="email"
+           name="email"
+           type="email"
+           placeholder="Your email"
+           formControlName="email">
+    <pre> STATUS: {{ formGroup.controls['email'].status | json }} </pre>
+    <pre> PRISTINE: {{ formGroup.controls['email'].pristine | json }} </pre>
+  </div>
+  <div>
+    <label for="message">Your message</label>
+    <textarea id="message"
+              name="message"
+              placeholder="Your message"
+              formControlName="message"></textarea>
+    <pre> STATUS: {{ formGroup.controls['message'].status | json }} </pre>
+    <pre> PRISTINE: {{ formGroup.controls['message'].pristine | json }} </pre>
+  </div>
+</form>
+<pre> {{ formGroup.value | json }} </pre>
+<pre> {{ formGroup.status | json }} </pre>
+<pre> PRISTINE: {{ formGroup.pristine | json }} </pre>
+<pre> TOUCHED: {{ formGroup.touched | json }} </pre>
+<pre> DIRTY: {{ formGroup.dirty | json }} </pre>

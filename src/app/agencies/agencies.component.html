@@ -2,7 +2,7 @@
   <button (click)="onNewClick()"> ➕ Add new Agency </button>
   <ul>
     <li *ngFor="let agency of agencies ">
-      <span>{{ agency.name }} </span>
+      <a [routerLink]="agency.id">{{ agency.name }} </a>
     </li>
   </ul>
 </article>

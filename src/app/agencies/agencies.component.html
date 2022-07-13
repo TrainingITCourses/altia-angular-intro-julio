@@ -1,5 +1,5 @@
 <article>
-  <button> ➕ Add new Agency </button>
+  <button (click)="onNewClick()"> ➕ Add new Agency </button>
   <ul>
     <li *ngFor="let agency of agencies ">
       <span>{{ agency.name }} </span>

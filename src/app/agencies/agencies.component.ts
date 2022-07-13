@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agencies',
@@ -27,7 +28,11 @@ export class AgenciesComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  public onNewClick() {
+    this.router.navigate(['agencies', 'new']);
+  }
 
   ngOnInit(): void {}
 }

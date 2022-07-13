@@ -9,6 +9,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./new-agency/new-agency.module').then((m) => m.NewAgencyModule),
   },
+  {
+    path: ':id',
+    loadChildren: () =>
+      import('./view-agency/view-agency.module').then(
+        (m) => m.ViewAgencyModule
+      ),
+  },
 ];
 
 @NgModule({

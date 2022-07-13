@@ -53,11 +53,16 @@ ng g m about
 # Generate a new component
 ng g c about
 
-# Generate a new route
+# Generate several new routes
+ng g m contact --route=contact --module=app
+# Even nested routes
 ng g m auth/register --route=auth/register --module=app
 ng g m auth/login --route=auth/login --module=app
-ng g m contact --route=contact --module=app
 
+# Generate a new route for agencies
 ng g m agencies --route=agencies --module=app
-ng g m agencies/agenciesNew --route=new --module=agencies
+# Generate a sub route pending from agencies
+ng g m agencies/new-agency --route=new --module=agencies
+# Generate a parametric route pending also from agencies
+ng g m agencies/view-agency --route=:id --module=agencies
 ```

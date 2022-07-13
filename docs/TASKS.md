@@ -24,3 +24,27 @@
 - [x] Show an icon to indicate the trip kind
 
 ## 2. Modules
+
+- [x] Create a Core module
+- [x] Move the header node to the Core module
+- [x] Move the footer node to the Core module
+- [x] Create a Home module
+- [x] Move the main node to the Home component
+- [x] Create a Shared module
+- [x] Move the reloading content to a component on the Shared module
+
+## 3. Routes
+
+- [x] Route for home page (/) bind to HomeComponent
+- [x] Route for an about page (`/about`) bind lazy to AboutModule
+- [x] Route for an about page (`/contact`) bind lazy to ContactModule
+- [x] Route for a register page (`auth/register`) bind lazy to RegisterModule
+- [x] Route for a login page (`auth/login`) bind lazy to LoginModule
+- [x] Route for an agencies page (`/agencies`) bind lazy to AgenciesModule
+- [x] Route for a form page to create a new agency (`/agencies/new`) bind lazy to AgencyModule
+- [x] Route for a parametric agency page (`/agencies/:id`) bind lazy to AgencyModule
+
+## 4. Forms
+
+- [x] Create a form for the contact page
+- [x] Validate and give feedback to the user

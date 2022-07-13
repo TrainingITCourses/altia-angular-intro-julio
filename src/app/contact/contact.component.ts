@@ -44,7 +44,11 @@ export class ContactComponent implements OnInit {
     return true;
   }
 
-  private getControl(formControlName: string) {
+  public mustShowError(formControlName: string): boolean {
+    return this.isTouched(formControlName) && this.isInvalid(formControlName);
+  }
+
+  public getControl(formControlName: string) {
     return this.formGroup.controls[formControlName];
   }
 

@@ -7,7 +7,7 @@
            placeholder="Your name"
            formControlName="name"
            [attr.aria-invalid]="isInvalid('name')">
-    <small *ngIf="isTouched('name') && isInvalid('name')"> This field is required </small>
+    <small *ngIf="mustShowError('name')"> {{ getControl('name').errors | json }} </small>
   </div>
   <div>
     <label for="email">Your email</label>
@@ -17,8 +17,7 @@
            placeholder="Your email"
            formControlName="email"
            [attr.aria-invalid]="isInvalid('email')">
-    <small *ngIf="isTouched('email') && isInvalid('email')"> This field is required and valid email
-    </small>
+    <small *ngIf="mustShowError('email')"> {{ getControl('email').errors | json }} </small>
   </div>
   <div>
     <label for="message">Your message</label>
@@ -27,7 +26,7 @@
               placeholder="Your message"
               formControlName="message"
               [attr.aria-invalid]="isInvalid('message')"></textarea>
-    <small *ngIf="isTouched('message') && isInvalid('message')"> This field has to be short </small>
+    <small *ngIf="mustShowError('message')"> {{ getControl('message').errors | json }} </small>
   </div>
   <button (click)="onSendClick()"
           [disabled]="formGroup.invalid"> Send </button>

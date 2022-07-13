@@ -12,6 +12,17 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
   },
+  {
+    path: 'auth/register',
+    loadChildren: () =>
+      import('./auth/register/register.module').then((m) => m.RegisterModule),
+  },
+  {
+    path: 'auth/login',
+    loadChildren: () =>
+      import('./auth/login/login.module').then((m) => m.LoginModule),
+  },
+  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
 ];
 
 @NgModule({

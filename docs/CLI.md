@@ -44,3 +44,17 @@ ng g c shared/reloading --export
 ng g m core
 ## Move header and footer to core module
 ```
+
+# 3. Router
+
+```bash
+# Generate a new module
+ng g m about
+# Generate a new component
+ng g c about
+
+# Generate a new route
+ng g m auth/register --route=auth/register --module=app
+ng g m auth/login --route=auth/login --module=app
+ng g m contact --route=contact --module=app
+```

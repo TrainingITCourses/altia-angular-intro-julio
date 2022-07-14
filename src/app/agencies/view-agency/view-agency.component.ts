@@ -22,6 +22,8 @@ export class ViewAgencyComponent implements OnInit {
     // this.agency = data.agencies.find(byAgencyId);
 
     this.agency = data.agencies.find((a) => a.id === agencyId);
+
+    // data.agencies.forEach((a) => console.log('agency:', a));
   }
 
   ngOnInit(): void {}

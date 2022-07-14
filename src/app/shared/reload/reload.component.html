@@ -1,2 +1,4 @@
-<button (click)="reload()"> ♻️ Reload </button>
-<aside *ngIf="isReloading"> Reloading... please wait. ⌛ </aside>
+<button (click)="onReloadClick()"> ♻️ Reload {{ dataName}} </button>
+<aside *ngIf="isReloading">
+  Reloading {{ dataName }}... please wait. ⌛
+</aside>

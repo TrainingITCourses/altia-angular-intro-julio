@@ -1,3 +1,8 @@
 <app-agencies [agencies]="agencies"></app-agencies>
+<app-reload [isReloading]="isReloadingAgencies"
+            dataName="Agencies"
+            (reload)="onReload($event)"></app-reload>
 <app-trips></app-trips>
-<app-reload></app-reload>
+<app-reload [isReloading]="isReloadingTrips"
+            dataName="Trips"
+            (reload)="onReload($event)"></app-reload>

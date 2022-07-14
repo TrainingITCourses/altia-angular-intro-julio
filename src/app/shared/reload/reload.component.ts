@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-reload',
@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reload.component.css'],
 })
 export class ReloadComponent implements OnInit {
-  public isReloading = false;
+  @Input() public isReloading = false;
+  @Input() public dataName = '';
+  @Output() public reload = new EventEmitter<string>();
 
-  public reload(): void {
-    this.isReloading = true;
-    console.log('♻️ Reloading...');
+  public onReloadClick(): void {
+    this.reload.emit(this.dataName);
   }
 
   ngOnInit(): void {}

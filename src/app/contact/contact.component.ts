@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { UtilService } from '../core/services/util.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,7 @@ import {
 export class ContactComponent implements OnInit {
   public formGroup: FormGroup;
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: FormBuilder, private util: UtilService) {
     this.formGroup = formBuilder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [
@@ -49,7 +50,7 @@ export class ContactComponent implements OnInit {
   }
 
   public getControl(formControlName: string) {
-    return this.formGroup.controls[formControlName];
+    return this.util.getControl(this.formGroup, formControlName);
   }
 
   public onSendClick() {

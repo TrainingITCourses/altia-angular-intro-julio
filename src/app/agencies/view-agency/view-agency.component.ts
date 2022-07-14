@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UtilService } from 'src/app/core/services/util.service';
 
 @Component({
   selector: 'app-view-agency',
@@ -8,8 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewAgencyComponent implements OnInit {
   public agencyId: string;
-  constructor(private route: ActivatedRoute) {
-    this.agencyId = this.route.snapshot.paramMap.get('id') || '';
+
+  constructor(route: ActivatedRoute, util: UtilService) {
+    this.agencyId = util.getIdFromRoute(route);
   }
 
   ngOnInit(): void {}

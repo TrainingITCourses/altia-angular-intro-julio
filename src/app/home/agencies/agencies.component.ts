@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/core/services/data.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-agencies',
@@ -7,10 +6,7 @@ import { DataService } from 'src/app/core/services/data.service';
   styleUrls: ['./agencies.component.css'],
 })
 export class AgenciesComponent implements OnInit {
-  public agencies;
-  constructor(data: DataService) {
-    this.agencies = data.agencies;
-  }
+  @Input() public agencies: any[] = [];
 
   ngOnInit(): void {}
 }

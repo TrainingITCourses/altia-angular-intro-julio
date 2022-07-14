@@ -66,3 +66,22 @@ ng g m agencies/new-agency --route=new --module=agencies
 # Generate a parametric route pending also from agencies
 ng g m agencies/view-agency --route=:id --module=agencies
 ```
+
+## 4. Forms
+
+```bash
+
+```
+
+## 5. Services
+
+```bash
+# A generic stateless service
+ng g s core/services/util
+
+# A generic stateful service
+ng g s core/services/data
+
+ng g c home/agencies/agency-item
+
+```

@@ -1,28 +1,32 @@
 import { Injectable } from '@angular/core';
+import { AgencyInterface } from '../models/agency.interface';
+import { RangeEnum } from '../models/range.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  public agencies = [
+  public agencies: AgencyInterface[] = [
     {
       id: 'space-y',
       name: 'Space Y',
-      range: 'Interplanetary',
+      range: RangeEnum.Interplanetary,
       status: 'Active',
     },
     {
       id: 'green-origin',
       name: 'Green Origin',
-      range: 'Orbital',
+      range: RangeEnum.Orbital,
       status: 'Active',
     },
     {
       id: 'virgin-way',
       name: 'Virgin Way',
-      range: 'Orbital',
+      range: RangeEnum.Orbital,
       status: 'Pending',
     },
   ];
-  constructor() {}
+  constructor() {
+    this.agencies.forEach((a) => console.log(a.status));
+  }
 }

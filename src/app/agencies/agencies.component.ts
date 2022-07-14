@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RangeEnum } from '../core/models/range.enum';
 import { DataService } from '../core/services/data.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class AgenciesComponent implements OnInit {
     this.data.agencies.push({
       id: 'altia',
       name: 'Altia',
-      range: 'Orbital',
+      range: RangeEnum.Orbital,
       status: 'Active',
     });
     this.router.navigate(['']);

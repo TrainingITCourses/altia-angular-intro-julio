@@ -85,3 +85,14 @@ ng g s core/services/data
 ng g c home/agencies/agency-item
 
 ```
+
+## 6. Http
+
+```bash
+npm i -D json-server json-server-auth
+
+npm i
+
+npm run api
+
+```

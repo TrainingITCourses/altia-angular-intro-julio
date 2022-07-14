@@ -2,9 +2,7 @@
   <h3>We work with {{ agencies.length }} agencies</h3>
   <ul>
     <li *ngFor="let agency of agencies ">
-      <span [ngClass]=" agency.status | lowercase ">{{ agency.name }} </span>
-      <span *ngIf="agency.range==='Interplanetary' ; else orbitalIcon  "> 🪐 </span>
-      <ng-template #orbitalIcon><span> 🌍 </span></ng-template>
+      <app-agency-item [agency]="agency"></app-agency-item>
     </li>
   </ul>
 </article>

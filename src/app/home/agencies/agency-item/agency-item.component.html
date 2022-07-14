@@ -1,0 +1,3 @@
+<span [ngClass]=" agency.status | lowercase ">{{ agency.name }} </span>
+<span *ngIf="agency.range==='Interplanetary' ; else orbitalIcon  "> 🪐 </span>
+<ng-template #orbitalIcon><span> 🌍 </span></ng-template>

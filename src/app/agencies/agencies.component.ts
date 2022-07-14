@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../core/services/data.service';
 
 @Component({
   selector: 'app-agencies',
@@ -7,31 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./agencies.component.css'],
 })
 export class AgenciesComponent implements OnInit {
-  public agencies = [
-    {
-      id: 'space-y',
-      name: 'Space Y',
-      range: 'Interplanetary',
-      status: 'Active',
-    },
-    {
-      id: 'green-origin',
-      name: 'Green Origin',
-      range: 'Orbital',
-      status: 'Active',
-    },
-    {
-      id: 'virgin-way',
-      name: 'Virgin Way',
-      range: 'Orbital',
-      status: 'Pending',
-    },
-  ];
+  public agencies;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private data: DataService) {
+    this.agencies = data.agencies;
+  }
 
   public onNewClick() {
-    this.router.navigate(['agencies', 'new']);
+    //this.router.navigate(['agencies', 'new']);
+    this.data.agencies.push({
+      id: 'altia',
+      name: 'Altia',
+      range: 'Orbital',
+      status: 'Active',
+    });
+    this.router.navigate(['']);
   }
 
   ngOnInit(): void {}

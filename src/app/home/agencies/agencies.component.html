@@ -3,8 +3,6 @@
   <ul>
     <li *ngFor="let agency of agencies ">
       <span [ngClass]=" agency.status | lowercase ">{{ agency.name }} </span>
-      <!-- <span *ngIf="agency.range==='Interplanetary'"> 🪐 </span>
-        <span *ngIf="agency.range==='Orbital'"> 🌍 </span> -->
       <span *ngIf="agency.range==='Interplanetary' ; else orbitalIcon  "> 🪐 </span>
       <ng-template #orbitalIcon><span> 🌍 </span></ng-template>
     </li>

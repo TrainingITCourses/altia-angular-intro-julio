@@ -95,4 +95,13 @@ npm i
 
 npm run api
 
+ng g s core/services/api
+```
+
+## 7. RxJS
+
+```bash
+ng g s core/services/store
+
+
 ```

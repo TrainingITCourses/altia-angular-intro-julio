@@ -1,4 +1,5 @@
-<app-agencies [agencies]="agencies"></app-agencies>
+<app-agencies *ngIf="agenciesView$ | async as agenciesView"
+              [agenciesView]="agenciesView"></app-agencies>
 
 <app-reload [isReloading]="isReloadingAgencies"
             dataName="Agencies"

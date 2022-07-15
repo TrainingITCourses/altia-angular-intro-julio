@@ -1,7 +1,7 @@
 <article>
-  <h3>We work with {{ agencies.length }} agencies</h3>
+  <h3>We work with {{ agenciesView.agenciesCount }} agencies</h3>
   <ul>
-    <li *ngFor="let agency of agencies ">
+    <li *ngFor="let agency of agenciesView.agenciesList ">
       <app-agency-item [agency]="agency"></app-agency-item>
     </li>
   </ul>

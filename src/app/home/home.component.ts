@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(data: DataService, api: ApiService) {
     // this.agencies = data.agencies;
+    // api.getAgencies().subscribe((agencies) => (this.agencies = agencies));
     api.getAgencies().subscribe((agencies) => (this.agencies = agencies));
   }
 

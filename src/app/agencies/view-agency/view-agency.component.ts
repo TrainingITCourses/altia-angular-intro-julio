@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/core/services/api.service';
 import { DataService } from 'src/app/core/services/data.service';
 import { UtilService } from 'src/app/core/services/util.service';
 
@@ -11,7 +12,12 @@ import { UtilService } from 'src/app/core/services/util.service';
 export class ViewAgencyComponent implements OnInit {
   // public agencyId: string;
   public agency: any;
-  constructor(route: ActivatedRoute, util: UtilService, data: DataService) {
+  constructor(
+    route: ActivatedRoute,
+    util: UtilService,
+    data: DataService,
+    api: ApiService
+  ) {
     const agencyId = util.getIdFromRoute(route);
 
     // this.agency = data.agencies.find(function byAgencyId(a) {
@@ -21,9 +27,11 @@ export class ViewAgencyComponent implements OnInit {
     // const byAgencyId = (agency: any) => agency.id === agencyId;
     // this.agency = data.agencies.find(byAgencyId);
 
-    this.agency = data.agencies.find((a) => a.id === agencyId);
+    // this.agency = data.agencies.find((a) => a.id === agencyId);
 
     // data.agencies.forEach((a) => console.log('agency:', a));
+
+    api.getAgencyById(agencyId).subscribe((agency) => (this.agency = agency));
   }
 
   ngOnInit(): void {}

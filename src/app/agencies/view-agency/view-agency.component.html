@@ -1,6 +1,11 @@
-<article *ngIf="agency">
+<!-- {{ agency$ | async | json }} -->
+
+<article *ngIf="(agency$ | async) as agency ; else loading">
   <h2>{{ agency.name }}</h2>
   <h3>{{ agency.range }}</h3>
   <h5>{{ agency.status }}</h5>
   <button> Delete agency</button>
 </article>
+<ng-template #loading>
+  <h3>Loading... ⌛ please wait.</h3>
+</ng-template>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AgencyType } from '../models/agency.type';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class ApiService {
     return this.http.get<AgencyType[]>(this.url);
   }
 
-  public getAgencyById(agencyId: string) {
+  public getAgencyById$(agencyId: string): Observable<AgencyType> {
     return this.http.get<AgencyType>(`${this.url}/${agencyId}`);
   }
 

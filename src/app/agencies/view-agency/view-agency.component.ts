@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AgencyType } from 'src/app/core/models/agency.type';
 import { ApiService } from 'src/app/core/services/api.service';
 import { DataService } from 'src/app/core/services/data.service';
@@ -12,8 +13,8 @@ import { UtilService } from 'src/app/core/services/util.service';
 })
 export class ViewAgencyComponent implements OnInit {
   // public agencyId: string;
-
-  public agency!: AgencyType;
+  // public agency!: AgencyType;
+  public agency$: Observable<AgencyType>;
 
   constructor(
     route: ActivatedRoute,
@@ -22,7 +23,9 @@ export class ViewAgencyComponent implements OnInit {
     api: ApiService
   ) {
     const agencyId = util.getIdFromRoute(route);
-    api.getAgencyById(agencyId).subscribe((agency) => (this.agency = agency));
+    this.agency$ = api.getAgencyById$(agencyId);
+
+    // api.getAgencyById(agencyId).subscribe((agency) => (this.agency = agency));
 
     // this.agency = data.agencies.find(function byAgencyId(a) {
     //   return a.id === agencyId;

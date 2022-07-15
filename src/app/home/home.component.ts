@@ -3,6 +3,7 @@ import { delay, map, Observable, tap } from 'rxjs';
 import { AgencyType } from '../core/models/agency.type';
 import { ApiService } from '../core/services/api.service';
 import { DataService } from '../core/services/data.service';
+import { StoreService } from '../core/services/store.service';
 import {
   AgenciesViewType,
   AgencyItemType,
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   public isReloadingAgencies = false;
   public isReloadingTrips = false;
 
-  constructor(data: DataService, api: ApiService) {
+  constructor(data: DataService, api: ApiService, store: StoreService) {
     // this.agencies = data.agencies;
     // api.getAgencies().subscribe((agencies) => (this.agencies = agencies));
     // this.agencies$ = api.getAgencies();
@@ -44,6 +45,13 @@ export class HomeComponent implements OnInit {
       }),
       tap((agenciesView: AgenciesViewType) => {
         console.log('TO VIEW', agenciesView);
+        console.log('store state BEFORE', store.state);
+        // store.state.agenciesCount = agenciesView.agenciesCount;
+        store.state$.next({
+          agenciesCount: agenciesView.agenciesCount,
+          user: 'Anonymous',
+        });
+        console.log('store state AFTER', store.state);
         this.isReloadingAgencies = false;
       })
     );

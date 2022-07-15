@@ -4,7 +4,7 @@
       <strong> <a routerLink="/">🚀 {{ title | uppercase }}</a></strong>
     </ul>
     <ul>
-      <li> <a routerLink="/agencies"> ➡️ Agencies </a></li>
+      <li> <a routerLink="/agencies"> ➡️ Agencies ( {{ agenciesCount$ | async }} ) </a></li>
       <li> <a routerLink="/auth/register"> 🔏 Register </a></li>
       <li> <a routerLink="/auth/login"> 🔐 Login </a></li>
     </ul>

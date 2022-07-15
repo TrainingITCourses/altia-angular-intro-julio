@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AgencyType } from '../core/models/agency.type';
 import { ApiService } from '../core/services/api.service';
 import { DataService } from '../core/services/data.service';
 
@@ -8,7 +9,7 @@ import { DataService } from '../core/services/data.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public agencies: any[] = [];
+  public agencies: AgencyType[] = [];
   public isReloadingAgencies = false;
   public isReloadingTrips = false;
 

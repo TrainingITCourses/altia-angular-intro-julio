@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AgencyType } from '../models/agency.type';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +10,14 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   public getAgencies() {
-    return this.http.get<any[]>(this.url);
+    return this.http.get<AgencyType[]>(this.url);
   }
 
   public getAgencyById(agencyId: string) {
-    return this.http.get<any>(`${this.url}/${agencyId}`);
+    return this.http.get<AgencyType>(`${this.url}/${agencyId}`);
   }
 
-  public postAgency(agency: any) {
-    return this.http.post<any>(this.url, agency);
+  public postAgency(agency: AgencyType) {
+    return this.http.post<AgencyType>(this.url, agency);
   }
 }

@@ -1,4 +1,4 @@
 export enum RangeEnum {
-  'Orbital',
-  'Interplanetary',
+  'Orbital' = 'Orbital',
+  'Interplanetary' = 'Interplanetary',
 }

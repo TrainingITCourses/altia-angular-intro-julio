@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RangeEnum } from '../core/models/range.enum';
+import { AgencyType } from '../core/models/agency.type';
 import { ApiService } from '../core/services/api.service';
 import { DataService } from '../core/services/data.service';
 
@@ -10,7 +10,7 @@ import { DataService } from '../core/services/data.service';
   styleUrls: ['./agencies.component.css'],
 })
 export class AgenciesComponent implements OnInit {
-  public agencies: any[] = [];
+  public agencies: AgencyType[] = [];
 
   constructor(
     private router: Router,
@@ -22,10 +22,10 @@ export class AgenciesComponent implements OnInit {
   }
 
   public onNewClick() {
-    const newAgency = {
+    const newAgency: AgencyType = {
       id: 'altia',
       name: 'Altia',
-      range: RangeEnum.Orbital,
+      range: 'Orbital',
       status: 'Active',
     };
     this.api

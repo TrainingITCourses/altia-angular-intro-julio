@@ -1,9 +1,9 @@
-import { RangeEnum } from './range.enum';
+import { RangeType } from './range.type';
 import { StatusType } from './status.type';
 
 export type AgencyType = {
   id: string;
   name: string;
-  range?: RangeEnum;
+  range?: RangeType;
   status: StatusType;
 };

@@ -20,10 +20,11 @@ npm install @picocss/pico
 
 ```bash
 # Generate new component Header
-ng g c header
+ng g c header --flat
 
-# Generate new component Footer
+# Generate new component Footer with flat true on angular.json
 ng g c footer
+
 
 # Generate new module Home
 ng g m home
@@ -40,7 +41,7 @@ ng g m shared
 # Generate an exported component
 ng g c shared/reloading --export
 
-# Generate a Shared module
+# Alternatively Generate a Core module
 ng g m core
 ## Move header and footer to core module
 ```

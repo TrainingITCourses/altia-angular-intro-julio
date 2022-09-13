@@ -60,4 +60,5 @@ ng g m contact --route=contact --module=app
 
 ng g m agencies --route=agencies --module=app
 ng g m agencies/agenciesNew --route=new --module=agencies
+ng g m agencies/agenciesView --route=:id --module=agencies
 ```
